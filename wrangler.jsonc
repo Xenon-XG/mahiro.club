@@ -1,0 +1,8 @@
+{
+  "name": "mahiro-club",
+  "compatibility_date": "2026-06-01",
+  "assets": { "directory": "./public", "not_found_handling": "404-page" },
+  "routes": [
+    { "pattern": "mahiro.club", "custom_domain": true }
+  ]
+}
