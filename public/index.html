@@ -55,11 +55,19 @@
           <p>从第一次出门跑腿，到和朋友们挤在被窝里聊天。<br>把《别当哥哥了！》里的小小日常，一页页收好。</p>
           <div class="hero-actions"><a class="button primary" href="#album"><svg class="icon"><use href="#i-book"/></svg>翻开日常相册</a><a class="button secondary" href="#profile"><svg class="icon"><use href="#i-user"/></svg>认识真寻</a></div>
         </div>
-        <div class="cover-art">
+        <div class="cover-art" role="group" aria-label="精选封面">
           <svg class="shine s1" aria-hidden="true"><use href="#i-pstar"/></svg><svg class="shine s2" aria-hidden="true"><use href="#i-pstar"/></svg>
           <figure class="window">
             <figcaption class="window-top"><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span><span>mahiro_album / 封面</span><button class="expand" aria-label="查看封面剧照" data-open="cover"><svg class="icon"><use href="#i-expand"/></svg></button></figcaption>
-            <img src="assets/cover.webp" alt="绪山真寻穿着带红色蝴蝶结的粉色上衣，在薄荷绿的星星和爱心前回头微笑。" width="1280" height="720" fetchpriority="high">
+            <div class="cover-photo picture-stack"><img id="cover-image" src="assets/cover.webp" alt="绪山真寻穿着带红色蝴蝶结的粉色上衣，在薄荷绿的星星和爱心前回头微笑。" width="1280" height="720" fetchpriority="high"></div>
+            <div class="contact-strip" hidden>
+              <div class="cover-caption" aria-live="polite" aria-atomic="true"><span class="entry-name" id="cover-episode">EPISODE 01</span><strong id="cover-name">你好，绪山真寻</strong></div>
+              <div class="cover-choices" role="group" aria-label="选择封面画面">
+                <button data-cover="cover" aria-pressed="true" aria-label="封面：你好，绪山真寻"><img src="assets/cover.webp" alt="" width="72" height="42"></button>
+                <button data-cover="school" aria-pressed="false" aria-label="封面：又一次，自我介绍"><img src="assets/school.webp" alt="" width="72" height="42"></button>
+                <button data-cover="spring-trip" aria-pressed="false" aria-label="封面：穿着浴衣，慢慢走"><img src="assets/spring-trip.webp" alt="" width="72" height="42"></button>
+              </div>
+            </div>
           </figure>
           <div class="sticker" aria-hidden="true"><svg><use href="#i-pixel"/></svg>まひろの日常</div>
         </div>
@@ -68,7 +76,7 @@
     <div class="ribbon" aria-hidden="true"><div class="ribbon-track"><svg><use href="#i-pstar"/></svg><span>お兄ちゃんはおしまい！</span><svg><use href="#i-pixel"/></svg><b>MAHIRO OYAMA</b><svg><use href="#i-pstar"/></svg><span>まひろの日常</span><svg><use href="#i-pixel"/></svg><b>MAHIRO.CLUB</b><svg><use href="#i-pstar"/></svg><span>お兄ちゃんはおしまい！</span><svg><use href="#i-pixel"/></svg><b>MAHIRO OYAMA</b><svg><use href="#i-pstar"/></svg></div></div>
     <section class="album section wrap" id="album" aria-labelledby="album-title">
       <div class="section-head"><div><div class="eyebrow"><span></span> MEMORY ALBUM</div><h2 id="album-title">日常相册<span class="heading-dot">.</span></h2></div>
-      <div class="filters" role="group" aria-label="筛选相册"><button aria-pressed="true" data-filter="all">全部</button><button aria-pressed="false" data-filter="home">居家</button><button aria-pressed="false" data-filter="school">校园</button><button aria-pressed="false" data-filter="out">外出</button></div></div>
+      <div class="filters album-filters" role="group" aria-label="筛选相册"><button aria-pressed="true" data-filter="all">全部</button><button aria-pressed="false" data-filter="home">居家</button><button aria-pressed="false" data-filter="school">校园</button><button aria-pressed="false" data-filter="out">外出</button></div></div>
       <p class="album-intro">全 12 话 · 13 篇场景手记</p>
       <div class="cards" id="album-cards">
         <article class="card" data-id="mirror" data-category="home" data-episode="01" data-story="午睡醒来，真寻拿起平板，画面里却多了一张完全陌生的脸。呆毛跟着自己动，表情也一模一样。直到美波里来解释昨晚那杯饮料，真寻才意识到，今天最难认出来的人居然是自己。">
@@ -177,8 +185,9 @@
           <button data-person="asahi" aria-controls="profile-asahi" aria-pressed="false">朝日</button>
           <button data-person="miyo" aria-controls="profile-miyo" aria-pressed="false">美夜</button>
         </div>
+        <div class="profile-stage">
         <article class="profile-panel" id="profile-mahiro" data-profile="mahiro" aria-labelledby="name-mahiro">
-          <div class="portrait"><img id="costume" src="assets/loungewear.webp" loading="lazy" alt="绪山真寻的动画官方立绘" width="360" height="640"><span lang="ja">緒山 まひろ</span></div>
+          <div class="portrait"><div class="portrait-photo picture-stack"><img id="costume" src="assets/loungewear.webp" loading="lazy" alt="绪山真寻的动画官方立绘" width="360" height="640"></div><span lang="ja">緒山 まひろ</span></div>
           <div class="bio">
             <div class="entry-name">MAHIRO OYAMA</div><h3 id="name-mahiro">绪山真寻</h3>
             <p>原本只想待在家里打游戏的哥哥，因为妹妹美波里的一次实验，以女孩子的模样重新走进了日常生活。怕生的真寻慢慢有了出门的理由，先是为了便利店的动画周边，后来还为了会在教室里等自己的朋友。</p>
@@ -188,7 +197,7 @@
           </div>
         </article>
         <article class="profile-panel" id="profile-mihari" data-profile="mihari" aria-labelledby="name-mihari">
-          <div class="portrait"><img src="assets/mihari.webp" loading="lazy" alt="绪山美波里的动画官方立绘" width="360" height="640"><span lang="ja">緒山 みはり</span></div>
+          <div class="portrait"><div class="portrait-photo picture-stack"><img src="assets/mihari.webp" loading="lazy" alt="绪山美波里的动画官方立绘" width="360" height="640"></div><span lang="ja">緒山 みはり</span></div>
           <div class="bio">
             <div class="entry-name">MIHARI OYAMA</div><h3 id="name-mihari">绪山美波里</h3>
             <p>美波里跳级进了大学，学生时代也跑出过好成绩。实验是她的主意，照顾哥哥也是她的日常。真寻主动早起出门买周边时，两个人惦记的完全是不同的事，美波里却一样高兴得掉眼泪。</p>
@@ -197,7 +206,7 @@
           </div>
         </article>
         <article class="profile-panel" id="profile-kaede" data-profile="kaede" aria-labelledby="name-kaede">
-          <div class="portrait"><img src="assets/kaede.webp" loading="lazy" alt="穗月枫的动画官方立绘" width="360" height="640"><span lang="ja">穂月 かえで</span></div>
+          <div class="portrait"><div class="portrait-photo picture-stack"><img src="assets/kaede.webp" loading="lazy" alt="穗月枫的动画官方立绘" width="360" height="640"></div><span lang="ja">穂月 かえで</span></div>
           <div class="bio">
             <div class="entry-name">KAEDE HOZUKI</div><h3 id="name-kaede">穗月枫</h3>
             <p>枫会做饭，喜欢打扮，也很会带第一次尝试的人一起玩。照顾妹妹红叶练出来的本事，用在拘谨的真寻身上也很自然。想认识这位看着张扬、待人却细心的姐姐，可以从她第一次在绪山家下厨看起。</p>
@@ -206,7 +215,7 @@
           </div>
         </article>
         <article class="profile-panel" id="profile-momiji" data-profile="momiji" aria-labelledby="name-momiji">
-          <div class="portrait"><img src="assets/momiji.webp" loading="lazy" alt="穗月红叶的动画官方立绘" width="360" height="640"><span lang="ja">穂月 もみじ</span></div>
+          <div class="portrait"><div class="portrait-photo picture-stack"><img src="assets/momiji.webp" loading="lazy" alt="穗月红叶的动画官方立绘" width="360" height="640"></div><span lang="ja">穂月 もみじ</span></div>
           <div class="bio">
             <div class="entry-name">MOMIJI HOZUKI</div><h3 id="name-momiji">穗月红叶</h3>
             <p>红叶喜欢行动方便的打扮。她和真寻认识的地方是超市，那时的两人连同学都还算不上。她伸手帮了一次忙，后来又带着朝日和美夜来敲绪山家的门，真寻的朋友圈便从这里一点点变大。</p>
@@ -215,7 +224,7 @@
           </div>
         </article>
         <article class="profile-panel" id="profile-asahi" data-profile="asahi" aria-labelledby="name-asahi">
-          <div class="portrait"><img src="assets/asahi.webp" loading="lazy" alt="樱花朝日的动画官方立绘" width="360" height="640"><span lang="ja">桜花 あさひ</span></div>
+          <div class="portrait"><div class="portrait-photo picture-stack"><img src="assets/asahi.webp" loading="lazy" alt="樱花朝日的动画官方立绘" width="360" height="640"></div><span lang="ja">桜花 あさひ</span></div>
           <div class="bio">
             <div class="entry-name">ASAHI OHKA</div><h3 id="name-asahi">樱花朝日</h3>
             <p>朝日习惯给别人起昵称，想到什么就说什么。运动场上她总有使不完的劲，碰到考试却会一下蔫下来。有她在，连补习都能变成和朋友多待一会儿的理由。</p>
@@ -224,7 +233,7 @@
           </div>
         </article>
         <article class="profile-panel" id="profile-miyo" data-profile="miyo" aria-labelledby="name-miyo">
-          <div class="portrait"><img src="assets/miyo.webp" loading="lazy" alt="室崎美夜的动画官方立绘" width="360" height="640"><span lang="ja">室崎 みよ</span></div>
+          <div class="portrait"><div class="portrait-photo picture-stack"><img src="assets/miyo.webp" loading="lazy" alt="室崎美夜的动画官方立绘" width="360" height="640"></div><span lang="ja">室崎 みよ</span></div>
           <div class="bio">
             <div class="entry-name">MIYO MUROSAKI</div><h3 id="name-miyo">室崎美夜</h3>
             <p>美夜说话轻，喜欢观察身边的朋友。比起冲进热闹中央，她常常更享受看着大家凑在一起的样子。书店里的那次偶遇难得把镜头转向她自己，原来安静的同学也有想藏好的小爱好。</p>
@@ -232,6 +241,7 @@
             <div class="profile-links"><button class="related-entry" data-open="bookshop"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>读手记《书架之间的熟面孔》</button><a href="https://onimai.jp/character/miyo.html" class="source-link">官方角色介绍</a></div>
           </div>
         </article>
+        </div>
       </div>
     </section>
     <section class="section wrap music-section" id="music" aria-labelledby="music-title">
@@ -239,14 +249,14 @@
       <h2 id="music-title">动画唱片架<span class="heading-dot">.</span></h2>
       <div class="records">
         <article class="record">
-          <img src="assets/opening.webp" alt="动画片头曲通常盘封面" width="320" height="320" loading="lazy">
+          <div class="record-sleeve"><img src="assets/opening.webp" alt="动画片头曲通常盘封面" width="320" height="320" loading="lazy"></div>
           <div><span class="entry-name">OP · 片头曲</span><h3 lang="ja">アイデン貞貞メルトダウン</h3>
             <p class="artist" lang="ja">えなこ feat. P丸様。</p><p>两个人轮流抢拍似的接唱，画面里的真寻也一刻不得闲。重看时可以只盯着角色的小动作，听听换人接唱的瞬间，动作是怎么跟上去的。</p>
             <div class="record-links"><a href="https://youtu.be/cHcMHceZEuk">看无字幕片头</a><a href="https://onimai.jp/music/op.html">唱片资料</a></div>
           </div>
         </article>
         <article class="record">
-          <img src="assets/ending.webp" alt="ONIMAI SISTERS 片尾曲唱片封面" width="320" height="320" loading="lazy">
+          <div class="record-sleeve"><img src="assets/ending.webp" alt="ONIMAI SISTERS 片尾曲唱片封面" width="320" height="320" loading="lazy"></div>
           <div><span class="entry-name">ED · 片尾曲</span><h3 lang="ja">ひめごと＊クライシスターズ</h3>
             <p class="artist">ONIMAI SISTERS</p><p>开头几句对白里就能听见真寻、美波里、枫和红叶。四位配音演员以角色组合的名义合唱，单曲里还各收了一版独唱，可以挑最熟悉的那个声音来听。</p>
             <div class="record-links"><a href="https://youtu.be/qrgaRfJUSyY">看无字幕片尾</a><a href="https://onimai.jp/music/ed.html">唱片资料</a></div>
