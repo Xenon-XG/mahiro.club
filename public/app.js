@@ -1,4 +1,13 @@
 const cards = [...document.querySelectorAll('.card')];
+const albumOrder = cards.map(card => card.dataset.id);
+const firstSpread = 6;
+const moreRow = document.querySelector('.album-more');
+const expandAlbum = document.querySelector('[data-expand-album]');
+const castSelect = document.querySelector('.cast-select');
+const profiles = [...document.querySelectorAll('[data-profile]')];
+let matchingCards = cards;
+let albumExpanded = false;
+
 const entries = new Map(cards.map(card => {
   const image = card.querySelector('img');
   return [card.dataset.id, {
@@ -25,6 +34,23 @@ const storageKey = 'mahiro.club:album:v1';
 const menu = document.querySelector('.menu');
 const navigation = document.querySelector('#nav');
 let dialogMode = '';
+
+function renderAlbum() {
+  const shown = albumExpanded ? matchingCards : matchingCards.slice(0, firstSpread);
+  const visible = new Set(shown);
+  for (const card of cards) card.hidden = !visible.has(card);
+  moreRow.hidden = matchingCards.length <= firstSpread;
+  document.querySelector('#album-extent').textContent = '已展开 ' + shown.length + ' / ' + matchingCards.length + ' 篇';
+  expandAlbum.textContent = albumExpanded ? '收起相册' : '展开其余 ' + (matchingCards.length - firstSpread) + ' 篇';
+  expandAlbum.setAttribute('aria-expanded', String(albumExpanded));
+}
+
+function selectPerson(id) {
+  for (const panel of profiles) panel.hidden = panel.dataset.profile !== id;
+  for (const button of castSelect.querySelectorAll('button')) {
+    button.setAttribute('aria-pressed', String(button.dataset.person === id));
+  }
+}
 
 function loadSaved() {
   try {
@@ -79,12 +105,15 @@ function toggleSaved(id) {
 function displayDialog(label, ...children) {
   dialogLabel.textContent = label;
   dialogBody.replaceChildren(...children);
-  if (!dialog.open) dialog.showModal();
+  const wasOpen = dialog.open;
+  if (!wasOpen) dialog.showModal();
   dialog.scrollTop = 0;
-  dialog.querySelector('[data-close]').focus({preventScroll:true});
+  const focusTarget = wasOpen ? dialog.querySelector('#dialog-title') : dialog.querySelector('[data-close]');
+  if (wasOpen) focusTarget.tabIndex = -1;
+  focusTarget.focus({preventScroll:true});
 }
 
-function showEntry(id, fromCollection = false) {
+function showEntry(id, fromCollection = false, order = albumOrder) {
   const entry = entries.get(id);
   if (!entry) return;
   dialogMode = 'entry';
@@ -101,7 +130,24 @@ function showEntry(id, fromCollection = false) {
   save.dataset.save = id;
   actions.append(save, episodeLink);
   copy.append(element('div', 'entry-name', 'EPISODE ' + entry.episode), title, element('p', '', entry.story), actions);
-  if (fromCollection) copy.append(makeButton('返回收藏夹', 'plain', showCollection));
+  if (fromCollection) {
+    copy.append(makeButton('返回收藏夹', 'plain', showCollection));
+  } else if (id === 'cover') {
+    copy.append(makeButton('从第 1 话开始读', 'plain', () => showEntry(albumOrder[0])));
+  } else if (order.length > 1) {
+    const position = order.indexOf(id);
+    const turn = element('div', 'entry-turn');
+    turn.setAttribute('role', 'group');
+    turn.setAttribute('aria-label', '连续阅读');
+    for (const [offset, label] of [[-1, '上一篇'], [1, '下一篇']]) {
+      const neighbor = order[position + offset];
+      if (!neighbor) continue;
+      const link = makeButton('', 'turn-link', () => showEntry(neighbor, false, order));
+      link.append(element('span', '', label), element('strong', '', entries.get(neighbor).title));
+      turn.append(link);
+    }
+    copy.append(turn);
+  }
   displayDialog('MEMORY ALBUM / 日常手记', img, copy);
   refreshSaved();
 }
@@ -177,7 +223,8 @@ document.addEventListener('click', event => {
   if (open) {
     if (target.tagName === 'A' && (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)) return;
     event.preventDefault();
-    showEntry(open);
+    const order = target.closest('.card') ? matchingCards.map(card => card.dataset.id) : albumOrder;
+    showEntry(open, false, order);
   } else if (save) {
     toggleSaved(save);
   } else if (target.hasAttribute('data-stash')) {
@@ -189,12 +236,19 @@ document.addEventListener('click', event => {
     for (const button of document.querySelectorAll('[data-filter]')) {
       button.setAttribute('aria-pressed', String(button === target));
     }
-    let visible = 0;
-    for (const card of cards) {
-      card.hidden = filter !== 'all' && card.dataset.category !== filter;
-      if (!card.hidden) visible++;
-    }
-    status.textContent = target.textContent + '，共 ' + visible + ' 页手记。';
+    matchingCards = filter === 'all' ? cards : cards.filter(card => card.dataset.category === filter);
+    albumExpanded = false;
+    renderAlbum();
+    status.textContent = target.textContent + '，共 ' + matchingCards.length + ' 篇手记。';
+  } else if (target === expandAlbum) {
+    albumExpanded = !albumExpanded;
+    renderAlbum();
+    if (albumExpanded) matchingCards[firstSpread].querySelector('.card-link').focus();
+    else document.querySelector('#album-title').focus();
+    status.textContent = document.querySelector('#album-extent').textContent;
+  } else if (target.dataset.person) {
+    selectPerson(target.dataset.person);
+    status.textContent = '正在阅读' + target.textContent + '的角色档案。';
   } else if (costume) {
     const img = document.querySelector('#costume');
     img.src = 'assets/' + costume + '.webp';
@@ -236,5 +290,8 @@ window.addEventListener('storage', event => {
   refreshSaved();
 });
 document.querySelector('#album-title').tabIndex = -1;
+renderAlbum();
+selectPerson('mahiro');
+castSelect.hidden = false;
 refreshSaved();
 markSection();

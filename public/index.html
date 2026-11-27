@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#fff9f4">
   <title>真寻的日常手记 · mahiro.club</title>
-  <meta name="description" content="翻开绪山真寻的日常手记。在《别当哥哥了！》非官方同好站里，翻角色档案，收藏初次跑腿、校园生活和朋友聚会的动画瞬间。">
+  <meta name="description" content="翻开绪山真寻的日常手记。在《别当哥哥了！》非官方同好站里，翻阅全 12 话的场景手记，认识真寻与伙伴们，收藏喜欢的动画瞬间。">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:title" content="真寻的日常手记 · mahiro.club">
@@ -38,7 +38,7 @@
     <div class="wrap header-inner">
       <a href="#home" class="brand" aria-label="mahiro.club 首页"><svg aria-hidden="true"><use href="#i-pad"/></svg><span>mahiro<span class="brand-dot">.</span>club</span></a>
       <nav aria-label="主导航" id="nav">
-        <a href="#home" aria-current="location">手记首页</a><a href="#album">日常相册</a><a href="#profile">角色档案</a>
+        <a href="#home" aria-current="location">手记首页</a><a href="#album">日常相册</a><a href="#profile">角色档案</a><a href="#music">唱片架</a>
       </nav>
       <div class="head-actions">
         <button class="stash" data-stash><svg class="icon"><use href="#i-heart"/></svg><span>收藏夹</span><span class="count" hidden>0</span></button>
@@ -69,7 +69,29 @@
     <section class="album section wrap" id="album" aria-labelledby="album-title">
       <div class="section-head"><div><div class="eyebrow"><span></span> MEMORY ALBUM</div><h2 id="album-title">日常相册<span class="heading-dot">.</span></h2></div>
       <div class="filters" role="group" aria-label="筛选相册"><button aria-pressed="true" data-filter="all">全部</button><button aria-pressed="false" data-filter="home">居家</button><button aria-pressed="false" data-filter="school">校园</button><button aria-pressed="false" data-filter="out">外出</button></div></div>
-      <div class="cards">
+      <p class="album-intro">全 12 话 · 13 篇场景手记</p>
+      <div class="cards" id="album-cards">
+        <article class="card" data-id="mirror" data-category="home" data-episode="01" data-story="午睡醒来，真寻拿起平板，画面里却多了一张完全陌生的脸。呆毛跟着自己动，表情也一模一样。直到美波里来解释昨晚那杯饮料，真寻才意识到，今天最难认出来的人居然是自己。">
+          <a class="card-link" href="assets/mirror.webp" data-open="mirror">
+            <div class="thumb"><img src="assets/mirror.webp" alt="平板的拍摄画面里，真寻愣愣地看着自己" loading="lazy" width="1280" height="720"><span class="tag pink">居家</span></div>
+            <div class="card-text"><span class="entry-name">EPISODE 01</span><h3>屏幕里的那个人</h3></div>
+          </a>
+          <button class="save icon-button" data-save="mirror" aria-label="收藏《屏幕里的那个人》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+        </article>
+        <article class="card" data-id="rest" data-category="home" data-episode="02" data-story="为了找回从前的体力，真寻给自己布置了肌肉训练，身体却没照着计划走。肚子疼得厉害时，是美波里先弄清了缘由。平日里忙着记录变化的研究者，这时候最要紧的工作，是陪在被窝旁边。">
+          <a class="card-link" href="assets/rest.webp" data-open="rest">
+            <div class="thumb"><img src="assets/rest.webp" alt="真寻裹着蓝色被子，抬头看向守在身边的美波里" loading="lazy" width="1280" height="720"><span class="tag mint">居家</span></div>
+            <div class="card-text"><span class="entry-name">EPISODE 02</span><h3>今天的锻炼先暂停</h3></div>
+          </a>
+          <button class="save icon-button" data-save="rest" aria-label="收藏《今天的锻炼先暂停》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+        </article>
+        <article class="card" data-id="kitchen" data-category="home" data-episode="03" data-story="美波里的老同学枫初次登门，真寻紧张得连话都不敢多说。直到枫系上围裙，手里忙着做饭，嘴上还照顾着身边的人，真寻才敢凑到料理台旁。后来再听她说起化妆，已经是另一种紧张了。">
+          <a class="card-link" href="assets/kitchen.webp" data-open="kitchen">
+            <div class="thumb"><img src="assets/kitchen.webp" alt="枫系着围裙准备料理，真寻在旁边看着" loading="lazy" width="1280" height="720"><span class="tag butter">居家</span></div>
+            <div class="card-text"><span class="entry-name">EPISODE 03</span><h3>枫的厨房初见面</h3></div>
+          </a>
+          <button class="save icon-button" data-save="kitchen" aria-label="收藏《枫的厨房初见面》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+        </article>
         <article class="card" data-id="errand" data-category="out" data-episode="04" data-story="第一次一个人出门买东西，连货架都像是陌生地图。幸好有人停下来搭了一把手。对真寻来说，这趟跑腿带回家的，还有一个新朋友。">
           <a class="card-link" href="assets/errand.webp" data-open="errand">
             <div class="thumb"><img src="assets/errand.webp" alt="真寻与红叶站在超市的货架前" loading="lazy" width="1280" height="720"><span class="tag pink">外出</span></div>
@@ -77,19 +99,12 @@
           </a>
           <button class="save icon-button" data-save="errand" aria-label="收藏《出门跑腿，遇见红叶》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
         </article>
-        <article class="card" data-id="school" data-category="school" data-episode="06" data-story="黑板上写着自己的名字，面前是一整间教室的新同学。真寻穿着美波里从前的制服，重新站到了讲台前。好在抬起头时，已经能找到熟悉的脸了。">
-          <a class="card-link" href="assets/school.webp" data-open="school">
-            <div class="thumb"><img src="assets/school.webp" alt="穿上制服的真寻站在写有自己名字的黑板前" loading="lazy" width="1280" height="720"><span class="tag mint">校园</span></div>
-            <div class="card-text"><span class="entry-name">EPISODE 06</span><h3>又一次，自我介绍</h3></div>
+        <article class="card" data-id="arcade" data-category="out" data-episode="05" data-story="真寻破天荒地早早吃完早餐。美波里感动的是哥哥居然主动出门，真寻惦记的却是便利店限量的动画文件夹。东西到手，回家路上又撞见熟悉的音游机台，这趟小小远征一下有了返场。">
+          <a class="card-link" href="assets/arcade.webp" data-open="arcade">
+            <div class="thumb"><img src="assets/arcade.webp" alt="真寻找到了街机厅里的音乐游戏机" loading="lazy" width="1280" height="720"><span class="tag butter">外出</span></div>
+            <div class="card-text"><span class="entry-name">EPISODE 05</span><h3>为了文件夹，今天早起</h3></div>
           </a>
-          <button class="save icon-button" data-save="school" aria-label="收藏《又一次，自我介绍》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
-        </article>
-        <article class="card" data-id="sleepover" data-category="home" data-episode="08" data-story="原本打算把假期交给游戏，结果红叶、朝日和美夜全来了。房间还是那个房间，多了几个争着说话的人，连熟悉的游戏也有了新的乐趣。">
-          <a class="card-link" href="assets/sleepover.webp" data-open="sleepover">
-            <div class="thumb"><img src="assets/sleepover.webp" alt="朋友们穿着睡衣围在真寻身边" loading="lazy" width="1280" height="720"><span class="tag butter">居家</span></div>
-            <div class="card-text"><span class="entry-name">EPISODE 08</span><h3>今晚，谁也不许早睡</h3></div>
-          </a>
-          <button class="save icon-button" data-save="sleepover" aria-label="收藏《今晚，谁也不许早睡》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+          <button class="save icon-button" data-save="arcade" aria-label="收藏《为了文件夹，今天早起》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
         </article>
         <article class="card" data-id="parfait" data-category="out" data-episode="06" data-story="第一次和红叶的同学们出门，真寻一路都绷着神经。等芭菲端上桌，面前的陌生人也慢慢变成了可以一起分甜点的朋友。">
           <a class="card-link" href="assets/parfait.webp" data-open="parfait">
@@ -98,12 +113,26 @@
           </a>
           <button class="save icon-button" data-save="parfait" aria-label="收藏《一杯芭菲的距离》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
         </article>
+        <article class="card" data-id="school" data-category="school" data-episode="06" data-story="黑板上写着自己的名字，面前是一整间教室的新同学。真寻穿着美波里从前的制服，重新站到了讲台前。好在抬起头时，已经能找到熟悉的脸了。">
+          <a class="card-link" href="assets/school.webp" data-open="school">
+            <div class="thumb"><img src="assets/school.webp" alt="穿上制服的真寻站在写有自己名字的黑板前" loading="lazy" width="1280" height="720"><span class="tag mint">校园</span></div>
+            <div class="card-text"><span class="entry-name">EPISODE 06</span><h3>又一次，自我介绍</h3></div>
+          </a>
+          <button class="save icon-button" data-save="school" aria-label="收藏《又一次，自我介绍》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+        </article>
         <article class="card" data-id="exam" data-category="school" data-episode="07" data-story="真寻做练习册时还挺有把握，偏偏考试那天的阳光太好。等她从座位上醒来，卷子已经要收了。放在从前一定想逃回家的补习，现在倒有人能一起去了。">
           <a class="card-link" href="assets/exam.webp" data-open="exam">
             <div class="thumb"><img src="assets/exam.webp" alt="真寻在教室里与同学们交谈" loading="lazy" width="1280" height="720"><span class="tag pink">校园</span></div>
             <div class="card-text"><span class="entry-name">EPISODE 07</span><h3>考卷上的空白</h3></div>
           </a>
           <button class="save icon-button" data-save="exam" aria-label="收藏《考卷上的空白》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+        </article>
+        <article class="card" data-id="sleepover" data-category="home" data-episode="08" data-story="原本打算把假期交给游戏，结果红叶、朝日和美夜全来了。房间还是那个房间，多了几个争着说话的人，连熟悉的游戏也有了新的乐趣。">
+          <a class="card-link" href="assets/sleepover.webp" data-open="sleepover">
+            <div class="thumb"><img src="assets/sleepover.webp" alt="朋友们穿着睡衣围在真寻身边" loading="lazy" width="1280" height="720"><span class="tag butter">居家</span></div>
+            <div class="card-text"><span class="entry-name">EPISODE 08</span><h3>今晚，谁也不许早睡</h3></div>
+          </a>
+          <button class="save icon-button" data-save="sleepover" aria-label="收藏《今晚，谁也不许早睡》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
         </article>
         <article class="card" data-id="new-year" data-category="out" data-episode="09" data-story="圣诞节刚过去，新年的神社又热闹起来。真寻跟着美波里去初诣，在人群里碰见了枫和红叶。一年里认识的人，如今也成了一起迎接新年的人。">
           <a class="card-link" href="assets/new-year.webp" data-open="new-year">
@@ -112,16 +141,119 @@
           </a>
           <button class="save icon-button" data-save="new-year" aria-label="收藏《新年，神社见》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
         </article>
+        <article class="card" data-id="bookshop" data-category="out" data-episode="10" data-story="替美波里去书店跑腿时，真寻撞见了乔装打扮的美夜。在教室里总是安安静静看着朋友们的那个人，这回先被别人认了出来。在同一家书店里，每个人都有自己的目的地。">
+          <a class="card-link" href="assets/bookshop.webp" data-open="bookshop">
+            <div class="thumb"><img src="assets/bookshop.webp" alt="戴着眼镜的美夜站在书店的书架间" loading="lazy" width="1280" height="720"><span class="tag mint">外出</span></div>
+            <div class="card-text"><span class="entry-name">EPISODE 10</span><h3>书架之间的熟面孔</h3></div>
+          </a>
+          <button class="save icon-button" data-save="bookshop" aria-label="收藏《书架之间的熟面孔》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+        </article>
+        <article class="card" data-id="birthday" data-category="home" data-episode="11" data-story="朋友们突然开始躲着真寻，连平时最藏不住话的朝日都守住了秘密。等大家在绪山家把蛋糕端出来，前几天吞吞吐吐的话才算有了答案。枫被打工绊住了脚，她准备的有色润唇膏还是到了。">
+          <a class="card-link" href="assets/birthday.webp" data-open="birthday">
+            <div class="thumb"><img src="assets/birthday.webp" alt="生日蛋糕上摆着水果和写有生日祝福的巧克力牌" loading="lazy" width="1280" height="720"><span class="tag pink">居家</span></div>
+            <div class="card-text"><span class="entry-name">EPISODE 11</span><h3>蛋糕端上来之前</h3></div>
+          </a>
+          <button class="save icon-button" data-save="birthday" aria-label="收藏《蛋糕端上来之前》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+        </article>
+        <article class="card" data-id="spring-trip" data-category="out" data-episode="12" data-story="春假前随口说起的旅行，真的成了两天一夜的温泉行。真寻原本还想在旅馆里躺着，转眼就换上浴衣，跟着朋友们走进街巷。第一话里连门都懒得出的那个人，如今也出现在大家的旅行风景里。">
+          <a class="card-link" href="assets/spring-trip.webp" data-open="spring-trip">
+            <div class="thumb"><img src="assets/spring-trip.webp" alt="朝日和红叶穿着浴衣在温泉街品尝小吃，真寻和伙伴们跟在后面" loading="lazy" width="1280" height="720"><span class="tag mint">外出</span></div>
+            <div class="card-text"><span class="entry-name">EPISODE 12</span><h3>穿着浴衣，慢慢走</h3></div>
+          </a>
+          <button class="save icon-button" data-save="spring-trip" aria-label="收藏《穿着浴衣，慢慢走》" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+        </article>
+      </div>
+      <div class="album-more" hidden><span id="album-extent"></span><button class="button secondary" data-expand-album aria-controls="album-cards" aria-expanded="false">展开其余手记</button></div>
+    </section>
+    <section class="profile-section" id="profile" aria-labelledby="profile-title">
+      <div class="wrap section">
+        <div class="eyebrow"><span></span> CHARACTER FILE</div>
+        <h2 id="profile-title">角色档案<span class="heading-dot">.</span></h2>
+        <div class="cast-select" role="group" aria-label="选择角色" hidden>
+          <button data-person="mahiro" aria-controls="profile-mahiro" aria-pressed="true">真寻</button>
+          <button data-person="mihari" aria-controls="profile-mihari" aria-pressed="false">美波里</button>
+          <button data-person="kaede" aria-controls="profile-kaede" aria-pressed="false">枫</button>
+          <button data-person="momiji" aria-controls="profile-momiji" aria-pressed="false">红叶</button>
+          <button data-person="asahi" aria-controls="profile-asahi" aria-pressed="false">朝日</button>
+          <button data-person="miyo" aria-controls="profile-miyo" aria-pressed="false">美夜</button>
+        </div>
+        <article class="profile-panel" id="profile-mahiro" data-profile="mahiro" aria-labelledby="name-mahiro">
+          <div class="portrait"><img id="costume" src="assets/loungewear.webp" loading="lazy" alt="绪山真寻的动画官方立绘" width="360" height="640"><span lang="ja">緒山 まひろ</span></div>
+          <div class="bio">
+            <div class="entry-name">MAHIRO OYAMA</div><h3 id="name-mahiro">绪山真寻</h3>
+            <p>原本只想待在家里打游戏的哥哥，因为妹妹美波里的一次实验，以女孩子的模样重新走进了日常生活。怕生的真寻慢慢有了出门的理由，先是为了便利店的动画周边，后来还为了会在教室里等自己的朋友。</p>
+            <dl><div><dt>生日</dt><dd>3 月 6 日</dd></div><div><dt>动画配音</dt><dd>高野麻里佳</dd></div><div><dt>人物关系</dt><dd>美波里的哥哥</dd></div></dl>
+              <div class="costume-row"><div class="filters" role="group" aria-label="切换角色服装"><button data-costume="loungewear" aria-pressed="true">居家服</button><button data-costume="uniform" aria-pressed="false">学生制服</button></div></div>
+            <div class="profile-links"><button class="related-entry" data-open="mirror"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>读手记《屏幕里的那个人》</button><a href="https://onimai.jp/character/mahiro.html" class="source-link">官方角色介绍</a></div>
+          </div>
+        </article>
+        <article class="profile-panel" id="profile-mihari" data-profile="mihari" aria-labelledby="name-mihari">
+          <div class="portrait"><img src="assets/mihari.webp" loading="lazy" alt="绪山美波里的动画官方立绘" width="360" height="640"><span lang="ja">緒山 みはり</span></div>
+          <div class="bio">
+            <div class="entry-name">MIHARI OYAMA</div><h3 id="name-mihari">绪山美波里</h3>
+            <p>美波里跳级进了大学，学生时代也跑出过好成绩。实验是她的主意，照顾哥哥也是她的日常。真寻主动早起出门买周边时，两个人惦记的完全是不同的事，美波里却一样高兴得掉眼泪。</p>
+            <dl><div><dt>生日</dt><dd>4 月 22 日</dd></div><div><dt>动画配音</dt><dd>石原夏织</dd></div><div><dt>人物关系</dt><dd>真寻的妹妹</dd></div></dl>
+            <div class="profile-links"><button class="related-entry" data-open="arcade"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>读手记《为了文件夹，今天早起》</button><a href="https://onimai.jp/character/mihari.html" class="source-link">官方角色介绍</a></div>
+          </div>
+        </article>
+        <article class="profile-panel" id="profile-kaede" data-profile="kaede" aria-labelledby="name-kaede">
+          <div class="portrait"><img src="assets/kaede.webp" loading="lazy" alt="穗月枫的动画官方立绘" width="360" height="640"><span lang="ja">穂月 かえで</span></div>
+          <div class="bio">
+            <div class="entry-name">KAEDE HOZUKI</div><h3 id="name-kaede">穗月枫</h3>
+            <p>枫会做饭，喜欢打扮，也很会带第一次尝试的人一起玩。照顾妹妹红叶练出来的本事，用在拘谨的真寻身上也很自然。想认识这位看着张扬、待人却细心的姐姐，可以从她第一次在绪山家下厨看起。</p>
+            <dl><div><dt>生日</dt><dd>9 月 12 日</dd></div><div><dt>动画配音</dt><dd>金元寿子</dd></div><div><dt>人物关系</dt><dd>红叶的姐姐、美波里的老同学</dd></div></dl>
+            <div class="profile-links"><button class="related-entry" data-open="kitchen"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>读手记《枫的厨房初见面》</button><a href="https://onimai.jp/character/kaede.html" class="source-link">官方角色介绍</a></div>
+          </div>
+        </article>
+        <article class="profile-panel" id="profile-momiji" data-profile="momiji" aria-labelledby="name-momiji">
+          <div class="portrait"><img src="assets/momiji.webp" loading="lazy" alt="穗月红叶的动画官方立绘" width="360" height="640"><span lang="ja">穂月 もみじ</span></div>
+          <div class="bio">
+            <div class="entry-name">MOMIJI HOZUKI</div><h3 id="name-momiji">穗月红叶</h3>
+            <p>红叶喜欢行动方便的打扮。她和真寻认识的地方是超市，那时的两人连同学都还算不上。她伸手帮了一次忙，后来又带着朝日和美夜来敲绪山家的门，真寻的朋友圈便从这里一点点变大。</p>
+            <dl><div><dt>生日</dt><dd>10 月 20 日</dd></div><div><dt>动画配音</dt><dd>津田美波</dd></div><div><dt>人物关系</dt><dd>枫的妹妹、真寻的同学</dd></div></dl>
+            <div class="profile-links"><button class="related-entry" data-open="errand"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>读手记《出门跑腿，遇见红叶》</button><a href="https://onimai.jp/character/momiji.html" class="source-link">官方角色介绍</a></div>
+          </div>
+        </article>
+        <article class="profile-panel" id="profile-asahi" data-profile="asahi" aria-labelledby="name-asahi">
+          <div class="portrait"><img src="assets/asahi.webp" loading="lazy" alt="樱花朝日的动画官方立绘" width="360" height="640"><span lang="ja">桜花 あさひ</span></div>
+          <div class="bio">
+            <div class="entry-name">ASAHI OHKA</div><h3 id="name-asahi">樱花朝日</h3>
+            <p>朝日习惯给别人起昵称，想到什么就说什么。运动场上她总有使不完的劲，碰到考试却会一下蔫下来。有她在，连补习都能变成和朋友多待一会儿的理由。</p>
+            <dl><div><dt>生日</dt><dd>5 月 5 日</dd></div><div><dt>动画配音</dt><dd>优木加奈</dd></div><div><dt>人物关系</dt><dd>红叶、美夜和真寻的同学</dd></div></dl>
+            <div class="profile-links"><button class="related-entry" data-open="exam"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>读手记《考卷上的空白》</button><a href="https://onimai.jp/character/asahi.html" class="source-link">官方角色介绍</a></div>
+          </div>
+        </article>
+        <article class="profile-panel" id="profile-miyo" data-profile="miyo" aria-labelledby="name-miyo">
+          <div class="portrait"><img src="assets/miyo.webp" loading="lazy" alt="室崎美夜的动画官方立绘" width="360" height="640"><span lang="ja">室崎 みよ</span></div>
+          <div class="bio">
+            <div class="entry-name">MIYO MUROSAKI</div><h3 id="name-miyo">室崎美夜</h3>
+            <p>美夜说话轻，喜欢观察身边的朋友。比起冲进热闹中央，她常常更享受看着大家凑在一起的样子。书店里的那次偶遇难得把镜头转向她自己，原来安静的同学也有想藏好的小爱好。</p>
+            <dl><div><dt>生日</dt><dd>6 月 18 日</dd></div><div><dt>动画配音</dt><dd>日冈夏美</dd></div><div><dt>人物关系</dt><dd>红叶、朝日和真寻的同学</dd></div></dl>
+            <div class="profile-links"><button class="related-entry" data-open="bookshop"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>读手记《书架之间的熟面孔》</button><a href="https://onimai.jp/character/miyo.html" class="source-link">官方角色介绍</a></div>
+          </div>
+        </article>
       </div>
     </section>
-    <section class="profile-section" id="profile" aria-labelledby="profile-title"><div class="wrap section"><div class="eyebrow"><span></span> CHARACTER FILE</div><h2 id="profile-title">角色档案<span class="heading-dot">.</span></h2>
-      <div class="profile-panel"><div class="portrait"><img id="costume" src="assets/loungewear.webp" loading="lazy" alt="绪山真寻身穿蓝领白上衣和粉色运动裤的官方角色立绘" width="360" height="640"><span lang="ja">緒山 まひろ</span></div>
-      <div class="bio"><div class="entry-name">MAHIRO OYAMA</div><h3>绪山真寻</h3>
-      <p>原本只想待在家里打游戏的哥哥，因为妹妹美波里的一次实验，以女孩子的模样重新走进了日常生活。怕生的真寻找到了新朋友，也渐渐有了愿意为之出门的小事。</p>
-      <dl><div><dt>生日</dt><dd>3 月 6 日</dd></div><div><dt>动画配音</dt><dd>高野麻里佳</dd></div><div><dt>登场作品</dt><dd>《别当哥哥了！》</dd></div></dl>
-      <div class="costume-row"><div class="filters" role="group" aria-label="切换角色服装"><button data-costume="loungewear" aria-pressed="true">居家服</button><button data-costume="uniform" aria-pressed="false">学生制服</button></div></div>
-      <a href="https://onimai.jp/character/mahiro.html" class="source-link" lang="zh-CN">阅读动画官方角色介绍</a></div></div>
-    </div></section>
+    <section class="section wrap music-section" id="music" aria-labelledby="music-title">
+      <div class="eyebrow"><span></span> MUSIC SHELF</div>
+      <h2 id="music-title">动画唱片架<span class="heading-dot">.</span></h2>
+      <div class="records">
+        <article class="record">
+          <img src="assets/opening.webp" alt="动画片头曲通常盘封面" width="320" height="320" loading="lazy">
+          <div><span class="entry-name">OP · 片头曲</span><h3 lang="ja">アイデン貞貞メルトダウン</h3>
+            <p class="artist" lang="ja">えなこ feat. P丸様。</p><p>两个人轮流抢拍似的接唱，画面里的真寻也一刻不得闲。重看时可以只盯着角色的小动作，听听换人接唱的瞬间，动作是怎么跟上去的。</p>
+            <div class="record-links"><a href="https://youtu.be/cHcMHceZEuk">看无字幕片头</a><a href="https://onimai.jp/music/op.html">唱片资料</a></div>
+          </div>
+        </article>
+        <article class="record">
+          <img src="assets/ending.webp" alt="ONIMAI SISTERS 片尾曲唱片封面" width="320" height="320" loading="lazy">
+          <div><span class="entry-name">ED · 片尾曲</span><h3 lang="ja">ひめごと＊クライシスターズ</h3>
+            <p class="artist">ONIMAI SISTERS</p><p>开头几句对白里就能听见真寻、美波里、枫和红叶。四位配音演员以角色组合的名义合唱，单曲里还各收了一版独唱，可以挑最熟悉的那个声音来听。</p>
+            <div class="record-links"><a href="https://youtu.be/qrgaRfJUSyY">看无字幕片尾</a><a href="https://onimai.jp/music/ed.html">唱片资料</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
   <footer><div class="wrap footer-inner"><a href="#home" class="brand"><svg aria-hidden="true"><use href="#i-pad"/></svg><span>mahiro<span class="brand-dot">.</span>club</span></a><p>《别当哥哥了！》非官方同好站<br>©ねことうふ・一迅社／「おにまい」製作委員会</p><a class="foot-link" href="https://github.com/Xenon-XG/mahiro.club">GitHub</a></div></footer>
   <dialog id="viewer" aria-labelledby="dialog-title"><div class="dialog-frame"><div class="dialog-bar"><span id="dialog-label">MAHIRO.CLUB</span><button class="icon-button" data-close aria-label="关闭窗口"><svg class="icon"><use href="#i-x"/></svg></button></div><div id="dialog-body"></div></div></dialog>
